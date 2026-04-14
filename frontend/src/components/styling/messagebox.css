@@ -1,0 +1,267 @@
+ 
+/* ─── Container ─── */
+.message-holder {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  min-height: 75vh;
+  padding: 24px 20px 40px;
+  font-family: 'DM Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+ 
+/* ─── Heading ─── */
+.symptoms-heading {
+  text-align: center;
+  padding: 28px 0 8px;
+}
+.heading-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 6px;
+}
+.symptoms-heading h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #0f0f0f;
+  margin: 0 0 6px;
+  letter-spacing: -0.5px;
+}
+.heading-sub {
+  font-size: 0.875rem;
+  color: #888;
+  margin: 0;
+}
+ 
+/* ─── Chat Flow ─── */
+.chat-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+ 
+/* ─── Bubbles ─── */
+.user-bubble,
+.ai-bubble {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.user-bubble {
+  flex-direction: row-reverse;
+}
+ 
+.bubble-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.user-avatar {
+  background: #7c3aed;
+  color: white;
+}
+.ai-avatar {
+  background: #0f0f0f;
+  color: white;
+}
+ 
+.bubble-text {
+  background: #7c3aed;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 18px 4px 18px 18px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  max-width: 78%;
+  word-wrap: break-word;
+}
+ 
+/* ─── AI Card ─── */
+.ai-card {
+  background: #ffffff;
+  border: 1px solid #ebebeb;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  animation: cardIn 0.4s ease both;
+}
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+ 
+.ai-card--raw {
+  padding: 18px 20px;
+}
+.raw-text {
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.6;
+  margin: 0;
+}
+ 
+/* ─── Card Header ─── */
+.ai-card__header {
+  background: #0f0f0f;
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+}
+.ai-badge {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #a0ff84;
+}
+ 
+/* ─── Card Body ─── */
+.ai-card__body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+ 
+/* ─── Section Label ─── */
+.section-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #aaa;
+  margin: 0 0 8px;
+}
+ 
+/* ─── Condition ─── */
+.condition-section {
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 18px;
+}
+.condition-text {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+  line-height: 1.3;
+}
+ 
+/* ─── Risk Ring ─── */
+.risk-section {
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 18px;
+}
+.ring-row {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+.ring-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.ring-svg {
+  width: 100px;
+  height: 100px;
+  transform: rotate(-90deg);
+}
+.ring-track {
+  fill: none;
+  stroke: #f0f0f0;
+  stroke-width: 7;
+}
+.ring-fill {
+  fill: none;
+  stroke-width: 7;
+  stroke-linecap: round;
+}
+.ring-score {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  transform: rotate(90deg) translate(0, -100px);
+  /* Revert SVG rotation for text */
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: rotate(90deg);
+}
+.ring-label-inner {
+  font-size: 10px;
+  fill: #aaa;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  transform: rotate(90deg);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+/* Fix text orientation since SVG is rotated */
+.ring-svg text {
+  transform: rotate(90deg);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.ring-label {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+ 
+/* ─── Advice ─── */
+.advice-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.advice-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #333;
+  line-height: 1.5;
+}
+.advice-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #7c3aed;
+  flex-shrink: 0;
+  margin-top: 7px;
+}
+ 
+/* ─── Responsive ─── */
+@media (max-width: 520px) {
+  .message-holder {
+    padding: 16px 12px 32px;
+  }
+  .symptoms-heading h1 {
+    font-size: 1.4rem;
+  }
+  .bubble-text {
+    max-width: 90%;
+  }
+}
+ 
